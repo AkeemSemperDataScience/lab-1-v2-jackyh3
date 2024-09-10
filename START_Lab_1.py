@@ -4,6 +4,8 @@ def lab1Question1(input_gb):
     # Do the work here
     # The solution to this goes here (and in all of them below...)
     # Set the variable num_bytes to the answer and return it
+
+    # convert from gb to mb to kb to b
     num_bytes = input_gb * 1024 * 1024 *1024
 
     return num_bytes
@@ -14,8 +16,10 @@ def lab1Question2(name):
     is_odd = None
     length = len(name)
     if length % 2 == 0:
+        # no remainder = even
         is_odd = False
     elif length % 2 != 0:
+        # remainder = odd
         is_odd = True
     else:
         print("Error")
@@ -43,20 +47,67 @@ def lab1Question4(file_name):
     list_of_nums = []
     file = open(file_name, "r")
     # numbers are sorted line by line, thus read lines
-    # nums to convert from string to line
+    # this parses the file into a list line by line, which is how our file is organized
+    # note: retains \n
     lines = file.readlines()
+    # print(lines)
     for line in lines:
+        # print(line)
+        # nums to convert from string to int
+        # this removes the \n
         list_of_nums.append(int(line))
 
     return list_of_nums
 
+# # test 1
+# file_name = "github/test_file1.txt"
+# print(lab1Question4(file_name))
+
+# # test 2
+# file_name = "github/test_file2.txt"
+# print(lab1Question4(file_name))
+
+
+
 def lab1Question5(list_numbers):
     # Take an input of a list of numbers
     # Return the mode from that list. 
+
+    # mode = the item that occurs the most in that list
     mode_of_list = None
+    uniqueNums = []
+    countNum = 0
+    tempNum = 0
+
+    # obtain all unique numbers
+    for num in list_numbers:
+        if num not in uniqueNums:
+            uniqueNums.append(uniqueNums)
     
+    # list.count(item) gives the occurrence of the item in that list
+    # count each unique number, and make that the mode if its the largest
+    for uNum in uniqueNums:
+        if mode_of_list == None:
+            # first number check
+            countNum = list_numbers.count(uNum)
+            mode_of_list = uNum
+        elif mode_of_list != None:
+            # other numbers in list
+            tempNum = list_numbers.count(uNum)
+            if tempNum > countNum:
+                # found higher occurrence of number, assign new count and mode
+                countNum = tempNum
+                mode_of_list = uNum
+            elif tempNum == countNum:
+                # count same, get the mode of the larger number mathematically
+                if uNum > mode_of_list:
+                    mode_of_list = uNum
+        else:
+            print("Oh no :(")
 
     return mode_of_list
+
+
 
 def lab1Question6(quarters, dimes, nickels, pennies):
     # Take in 4 inputs - the number of quarters, dimes, nickels, and pennies in a handful
@@ -64,9 +115,13 @@ def lab1Question6(quarters, dimes, nickels, pennies):
     # For example, if the handful contains 4 quarters, 3 dimes, 2 nickels, and 1 penny, the function should return 1.41.
     total = None
     quarter_total = quarters * 0.25
+    # print(quarter_total)
     dime_total = dimes * 0.10
+    # print(dime_total)
     nickel_total = nickels * 0.05
+    # print(nickel_total)
     penny_total = pennies * 0.01
+    # print(penny_total)
     total = quarter_total + dime_total + nickel_total + penny_total
 
     return total

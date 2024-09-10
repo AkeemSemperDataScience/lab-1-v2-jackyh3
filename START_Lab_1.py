@@ -36,14 +36,17 @@ def lab1Question3(input_string, input_number):
 
     return character_at
 
+
 def lab1Question4(file_name):
     # Take an input of a file name. 
     # Read that file and return a list of all numbers in that file
     list_of_nums = []
     file = open(file_name, "r")
-    for char in file:
-        if char.isdigit():
-            list_of_nums.append(char)
+    # numbers are sorted line by line, thus read lines
+    # nums to convert from string to line
+    lines = file.readlines()
+    for line in lines:
+        list_of_nums.append(int(line))
 
     return list_of_nums
 

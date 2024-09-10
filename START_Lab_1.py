@@ -27,9 +27,9 @@ def lab1Question3(input_string, input_number):
     # Return the character of the string in the index given by number.  If this index does not exist, then return -1.
     character_at = -1
     length = len(input_string)
-    if input_number + 1 >= length:
+    if input_number + 1 <= length:
         character_at = input_string[input_number]
-    elif input_number + 1 < length:
+    elif input_number + 1 > length:
         character_at = -1
     else:
         print("Oh no")
@@ -67,6 +67,14 @@ def lab1Question6(quarters, dimes, nickels, pennies):
     total = quarter_total + dime_total + nickel_total + penny_total
 
     return total
+
+# # test 3 for Q6
+# quarters = 10
+# dimes = 5
+# nickels = 2
+# pennies = 1
+# total = lab1Question6(quarters, dimes, nickels, pennies)
+# print(total)
 
 ## Example of calling a function to test these... 
 # Question 1 Check:

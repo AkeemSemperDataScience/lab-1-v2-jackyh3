@@ -78,15 +78,18 @@ def lab1Question5(list_numbers):
     uniqueNums = []
     countNum = 0
     tempNum = 0
+    executes = 0
 
     # obtain all unique numbers
     for num in list_numbers:
         if num not in uniqueNums:
-            uniqueNums.append(uniqueNums)
+            uniqueNums.append(num)
     
     # list.count(item) gives the occurrence of the item in that list
     # count each unique number, and make that the mode if its the largest
     for uNum in uniqueNums:
+        executes += 1
+        print("Execute: ", executes)
         if mode_of_list == None:
             # first number check
             countNum = list_numbers.count(uNum)
@@ -104,9 +107,29 @@ def lab1Question5(list_numbers):
                     mode_of_list = uNum
         else:
             print("Oh no :(")
+        print(mode_of_list)
 
     return mode_of_list
 
+# # Test case 1
+# list_numbers = [1, 2, 3, 4, 5, 1]
+# assert lab1Question5(list_numbers) == 1
+
+# # Test case 2
+# list_numbers = [10, 20, 30, 40, 50, 10, 20, 20]
+# assert lab1Question5(list_numbers) == 20
+
+# # Test case 3
+# list_numbers = [1, 1, 2, 2, 3, 3, 3]
+# assert lab1Question5(list_numbers) == 3
+
+# # Test case 4
+# list_numbers = [100, 200, 300, 400, 500, 400]
+# assert lab1Question5(list_numbers) == 400
+
+# # Test case 5
+# list_numbers = [1, 1, 1, 1, 1]
+# assert lab1Question5(list_numbers) == 1
 
 
 def lab1Question6(quarters, dimes, nickels, pennies):

@@ -78,7 +78,7 @@ def lab1Question5(list_numbers):
     uniqueNums = []
     countNum = 0
     tempNum = 0
-    executes = 0
+    # executes = 0
 
     # obtain all unique numbers
     for num in list_numbers:
@@ -88,8 +88,8 @@ def lab1Question5(list_numbers):
     # list.count(item) gives the occurrence of the item in that list
     # count each unique number, and make that the mode if its the largest
     for uNum in uniqueNums:
-        executes += 1
-        print("Execute: ", executes)
+        # executes += 1
+        # print("Execute: ", executes)
         if mode_of_list == None:
             # first number check
             countNum = list_numbers.count(uNum)
@@ -107,7 +107,7 @@ def lab1Question5(list_numbers):
                     mode_of_list = uNum
         else:
             print("Oh no :(")
-        print(mode_of_list)
+        # print(mode_of_list)
 
     return mode_of_list
 

@@ -15,7 +15,7 @@ def lab1Question2(name):
     # Return None if the input is not a string
     is_odd = None
     # not a string
-    if type(name) != type(str):
+    if type(name) is not str:
         return None
     # continute
     length = len(name)
@@ -29,6 +29,11 @@ def lab1Question2(name):
         print("Error")
 
     return is_odd
+
+# #Test code:
+#     # Test case 1
+# name = "John"
+# assert lab1Question2(name) == False
 
 def lab1Question3(input_string, input_number):
     # Take in two inputs - a string and a number

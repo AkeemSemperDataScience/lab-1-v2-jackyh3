@@ -126,7 +126,7 @@ def test_lab1Question6_3():
     dimes = 5
     nickels = 2
     pennies = 1
-    #assert lab1Question6(quarters, dimes, nickels, pennies) == 3.15
+    #assert lab1Question6(quarters, dimes, nickels, pennies) == 3.11
     assert withinTolerance(3.15, lab1Question6(quarters, dimes, nickels, pennies), 0.001)
 def test_lab1Question6_4():
     # Test case 4

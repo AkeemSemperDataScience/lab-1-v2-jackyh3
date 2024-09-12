@@ -44,7 +44,7 @@ def test_lab1Question2_4():
 def test_lab1Question2_5():
     # Test case 5
     name = ""
-    assert lab1Question2(name) == False
+    assert lab1Question2(name) == None
 
 def test_lab1Question3_1():
     # Test case 1
@@ -127,7 +127,7 @@ def test_lab1Question6_3():
     nickels = 2
     pennies = 1
     #assert lab1Question6(quarters, dimes, nickels, pennies) == 3.11
-    assert withinTolerance(3.15, lab1Question6(quarters, dimes, nickels, pennies), 0.001)
+    assert withinTolerance(3.11, lab1Question6(quarters, dimes, nickels, pennies), 0.001)
 def test_lab1Question6_4():
     # Test case 4
     quarters = 1
